@@ -1,4 +1,4 @@
-FROM python:3.9-alpine as builder
+FROM python:3.13.0a4-alpine as builder
 
 # Install python3 and development files
 RUN set -eux \
@@ -23,7 +23,7 @@ RUN set -eux \
 	&& cd /opt/pwncat \
 	&& pip install .
 
-FROM python:3.9-alpine as final
+FROM python:3.13.0a4-alpine as final
 
 # Add libstdc++ and create the working directory
 RUN set -eux \
